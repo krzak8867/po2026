@@ -10,8 +10,8 @@ public class Lotto {
 
         while (rozmiar<6) {
 
-            int los = rand.nextInt(50);
-            boolean jest = losy.contains(7);
+            int los = rand.nextInt(1,50);
+            boolean jest = losy.contains(los);
             if (jest == false) {
                 losy.add(los);
                 rozmiar=rozmiar+1;
