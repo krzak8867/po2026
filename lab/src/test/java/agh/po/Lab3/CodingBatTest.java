@@ -1,5 +1,7 @@
 package agh.po.Lab3;
 
+import java.util.HashMap;
+import java.util.Map;
 import static org.junit.Assert.*;
 
 public class CodingBatTest {
@@ -39,4 +41,41 @@ public class CodingBatTest {
         assertEquals("heyhohohey", test.makeAbba("hey", "ho"));
         assertEquals("tralalatra", test.makeAbba("tra", "la"));
     }
+
+    @org.junit.Test
+    public void mapAB() {
+        CodingBat test = new CodingBat();
+        //Obie wartości ("a" i "b") istnieją w mapie
+        Map<String, String> map1 = new HashMap<>();  //Tworzymy pustą mapę
+        map1.put("a", "Hi");
+        map1.put("b", "There");
+        assertEquals("HiThere", test.mapAB(map1).get("ab"));
+        //Jest tylko jeden klucz ("a", brak "b")
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("a", "Hi");
+        assertFalse(test.mapAB(map2).containsKey("ab"));
+        //Pusta mapa
+        Map<String, String> map3 = new HashMap<>();
+        assertTrue(test.mapAB(map3).isEmpty());
+    }
+
+    @org.junit.Test
+    public void wordLen() {
+        CodingBat test = new CodingBat();
+
+
+        Map<String, Integer> map1 = test.wordLen(new String[]{"a", "bb", "a", "bb"});
+        assertEquals(Integer.valueOf(1), map1.get("a"));
+        assertEquals(Integer.valueOf(2), map1.get("bb"));
+
+
+        Map<String, Integer> map2 = test.wordLen(new String[]{"this", "and", "that"});
+        assertEquals(Integer.valueOf(4), map2.get("this"));
+
+
+        Map<String, Integer> map3 = test.wordLen(new String[]{});
+        assertTrue(map3.isEmpty());
+    }
+
+
 }
