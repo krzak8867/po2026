@@ -32,15 +32,18 @@ public class zoo {
     }
     public int sumLegs() {
         int suma = 0;
-        for (int i = 0; i < animals.length; i++) {
-            suma += animals[i].getLegs();
+        for (Animal animal : animals) {
+            int legs = animal.getLegs();
+            suma += legs;
         }
         return suma;
     }
 
+
     public void printDescriptions() {
         for (Animal animal : animals) {
             System.out.println(animal.getDescription());
+            animal.makeSound(); // <-- dopisz tę linijkę
         }
     }
 
