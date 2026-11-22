@@ -6,10 +6,11 @@ public class SkrzyniaBiegów extends Komponent {
     int aktualnyBieg;
     int iloscBiegow;
 
-    public SkrzyniaBiegów(String producent, String model) {
+    public SkrzyniaBiegów(String producent, String model, int iloscBiegow, Sprzęgło sprzęgło) {
         super(producent, model);
         this.aktualnyBieg=0;
         this.iloscBiegow=iloscBiegow;
+        this.sprzęgło = sprzęgło;
 
     }
 
@@ -18,11 +19,15 @@ public class SkrzyniaBiegów extends Komponent {
     }
 
     void zwiększBieg(){
-        aktualnyBieg=aktualnyBieg+1;
+        if (sprzęgło.isStanSprzęgła() && aktualnyBieg < iloscBiegow) {
+            aktualnyBieg = aktualnyBieg + 1;
+        }
     }
 
     void zmniejszBieg(){
-        aktualnyBieg=aktualnyBieg-1;
+        if (sprzęgło.isStanSprzęgła() && aktualnyBieg > 0) {
+            aktualnyBieg = aktualnyBieg - 1;
+        }
     }
 
 }

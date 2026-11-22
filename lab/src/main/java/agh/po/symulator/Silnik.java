@@ -6,7 +6,7 @@ public class Silnik extends Komponent {
     int maxObroty;
     int obroty;
 
-    public Silnik(String producent, String model) {
+    public Silnik(String producent, String model, int maxObroty) {
         super(producent, model);
         this.maxObroty = maxObroty;
         this.obroty = 0;

@@ -20,4 +20,8 @@ public class Sprzęgło extends Komponent{
     void zwolnij(){
         stanSprzęgła=false;
     }
+
+    public boolean isStanSprzęgła() {
+        return stanSprzęgła;
+    }
 }
