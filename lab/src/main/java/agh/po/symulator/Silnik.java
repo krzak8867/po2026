@@ -25,4 +25,16 @@ public class Silnik extends Komponent {
         this.obroty=0;
 
     }
+
+    public void zmniejszObroty(int oIle){
+        if(this.obroty>500){
+            this.obroty=this.obroty-oIle;
+        }
+    }
+
+    public void zwiekszObroty(int oIle){
+        if(this.obroty<this.maxObroty){
+            this.obroty=this.obroty+oIle;
+        }
+    }
 }
